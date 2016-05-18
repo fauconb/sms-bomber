@@ -1,0 +1,33 @@
+<ion-view view-title="Spam">
+  <ion-content>
+    <ion-list>
+      <label class="item item-input">
+        <span class="input-label" >Number</span>
+        <input type="number" ng-model="sms_options.number">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Contact</span>
+        <select ng-model="sms_options.contact" ng-change="setContact()">
+          <option ng-repeat="contact in contacts" value="{{ contact.number }}" >{{ contact.name }}</option>
+        </select>
+      </label>
+      <label class="item item-input">
+        <span class="input-label" >Delay</span>
+        <input type="number" ng-model="sms_options.delay">
+      </label>
+      <label class="item item-input">
+        <span class="input-label" >Times</span>
+        <input type="number" ng-model="sms_options.times">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Message</span>
+        <input type="text" ng-model="sms_options.message">
+      </label>
+      <button class="button button-full button-positive" ng-click="bombSms()">
+        Send
+      </button>
+
+      <p class="status">{{ sms_sent }} messages sent ! with {{ sms_error }} errors</p>
+    </ion-list>
+  </ion-content>
+</ion-view>
