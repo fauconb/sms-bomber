@@ -1,0 +1,67 @@
+$mainColor:  #b32d00;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+.status {
+  margin: 10px 0px;
+  text-align: center;
+}
+.navbar-header, .send-button {
+  background-color: $mainColor !important;
+  text-align: center;
+}
+.send-button { @include border-radius(10px); margin-left: 10px; width: 95%; margin-top: 10px;}
+
+.popup-body {text-align: center !important;}
+
+@-webkit-keyframes loadingSms {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+@-moz-keyframes loadingSms {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+
+@-ms-keyframes loadingSms {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+.loadingSms {
+  -webkit-animation-name: loadingSms;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: loadingSms;
+  -moz-animation-duration: 5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: loadingSms;
+  -ms-animation-duration: 5s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
